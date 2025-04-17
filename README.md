@@ -10,10 +10,8 @@ A sleek, modern to-do list app that uses sticky-note-style task cards. Built wit
 - Light/Dark mode toggle
 - Smooth hover and transition effects
 
-## 📸 Screenshots
-_Add a screenshot here if you want (optional)._
-
 ## 🔧 Tech Stack
+- 🐍 Python (Backend Logic)
 - HTML5
 - CSS3 (with gradients, transitions, and responsive design)
 - JavaScript (Vanilla)
