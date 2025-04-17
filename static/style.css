@@ -1,0 +1,262 @@
+/* Base Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #dce1f4, #f0f8f9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #444;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 420px;
+    max-width: 90%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02); /* Hover effect on container */
+}
+
+h1 {
+    text-align: center;
+    color: #2f3640;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    background-color: #fafafa;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background-color: #fff;
+    border-color: #00796b;
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    padding: 14px;
+    background: linear-gradient(90deg, #00c9a7, #00796b);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #00796b, #004d40);
+    transform: scale(1.05); /* Hover animation */
+}
+
+/* Task List - Sticky Notes */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center the sticky notes horizontally */
+}
+
+li {
+    background-color: #ffff88; /* Light yellow sticky note */
+    border: 1px solid #ddd;
+    padding: 18px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+li.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+    background-color: #f0f0f0; /* Lighter color for completed tasks */
+}
+
+li:hover {
+    transform: rotate(5deg); /* Slight tilt for interactivity */
+    background-color: #fff3b3; /* Lighter yellow on hover */
+}
+
+/* Task Content */
+li .task-content {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+li.completed .task-content {
+    color: #bbb;
+}
+
+/* Action Buttons */
+.action-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.action-buttons a {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #42a5f5;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #2196f3;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+/* Filter Buttons */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.filters a {
+    padding: 12px 20px;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.filters a:hover {
+    background-color: #eeeeee;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.filters a.active {
+    background-color: #00796b;
+    color: white;
+    border-color: #00796b;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+ul li {
+    animation: slideIn 0.3s ease-in-out;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .container {
+    background-color: #1d1d1d;
+}
+
+body.dark-mode button {
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+}
+
+body.dark-mode .filters a {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    input,
+    button {
+        font-size: 14px;
+    }
+
+    .action-buttons a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .filters a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
